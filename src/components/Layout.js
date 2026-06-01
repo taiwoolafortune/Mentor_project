@@ -16,7 +16,7 @@ import {
 
 const navItems = [
   { name: "Dashboard", path: "/dashboard", icon: FiGrid },
-  { name: "Mentee Request", path: "/mentee-request", icon: FiUsers },
+  { name: "Mentee Request", path: "/mentees-request", icon: FiUsers },
   { name: "My Mentees", path: "/my-mentee", icon: FiUserCheck },
   { name: "Materials", path: "/materials", icon: FiBookOpen },
   { name: "Chat", path: "/chat", icon: FiMessageSquare },
@@ -40,12 +40,11 @@ function SidebarLink({ item, onClick }) {
       to={item.path}
       onClick={onClick}
       className={({ isActive }) =>
-        [
-          "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition",
+        `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${
           isActive
             ? "bg-[#312F61] text-white"
-            : "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
-        ].join(" ")
+            : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+        }`
       }
     >
       <Icon className="h-5 w-5 shrink-0" />
@@ -164,10 +163,6 @@ export default function Layout({
               >
                 <FiMenu className="h-5 w-5" />
               </button>
-
-              <h1 className="text-xl font-semibold text-slate-900 sm:text-2xl">
-                {pageTitle}
-              </h1>
             </div>
 
             <div className="flex items-center space-x-[6rem] sm:gap-3">
