@@ -6,15 +6,15 @@ export default function ForgetPassword() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen ">
       {/* Left Artwork Illustration Side */}
-      <div className="hidden w-1/2 items-center justify-center bg-slate-50 lg:flex relative">
+      <div className="hidden w-1/2 items-center justify-center  lg:flex relative">
         <div className="max-w-md text-center space-y-6 relative p-8">
           {/* Custom floating abstract layout representing your image vectors */}
-          <div className="mx-auto flex h-48 w-48 items-center justify-center rounded-full bg-rose-50 text-rose-500 border-4 border-white shadow-xl animate-bounce">
-            <FiKey size={80} />
+          <div className="mx-auto flex h-48 w-48 items-center justify-center   shadow-xl">
+            <img src="./images/password.png" alt="Password Reset Illustration" className="h-[18rem] w-[20rem]  object-contain" />
           </div>
-          <div className="absolute top-10 left-12 w-10 h-10 bg-slate-200 rounded-lg rotate-12 flex items-center justify-center opacity-40"><FiKey/></div>
+          
         </div>
       </div>
 

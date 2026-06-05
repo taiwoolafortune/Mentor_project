@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function RegisterForm() {
+  const navigate = useNavigate(); // React Router Navigation hook
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -18,25 +21,38 @@ export default function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission / Next step logic
-    console.log('Form Submitted:', formData);
+    console.log('Step 1 Form Submitted:', formData);
+    
+    // Smoothly routes the mentor to the picture upload component screen
+    navigate('/upload');
   };
 
   return (
     <div className="flex min-h-screen bg-white font-sans antialiased">
       {/* LEFT SIDEBAR: Decorative & Hero Area (Hidden on Mobile/Tablet) */}
       <div className="relative hidden w-1/3 flex-col justify-between bg-gradient-to-b from-[#2E2A68] to-[#D61C4E] p-12 text-white lg:flex xl:w-[35%]">
-        {/* Abstract Background Overlay (Optional wave effect approximation) */}
+        {/* Abstract Background Overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-40"></div>
         
-        {/* Top Spacer or Small Logo if needed */}
-        <div></div>
+        {/* Top Header: Dynamic Back Trigger to safely return to Landing View */}
+        <div className="relative z-10">
+          <button 
+            type="button"
+            onClick={() => navigate('/landingpage')}
+            className="flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity cursor-pointer focus:outline-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back
+          </button>
+        </div>
 
         {/* Center Content: Text & Interactive Circles Diagram */}
         <div className="relative z-10 my-auto flex flex-col items-center text-center">
           <h2 className="mb-12 text-xl font-medium leading-relaxed max-w-sm">
             Join Our Mentor Community: Share Your Knowledge, Inspire Growth, and Make a Positive Impact as a Mentor.
-          </h2>
+          </h2> 
 
           {/* Concentric Circles / Avatars Section */}
           <div className="relative flex h-72 w-72 items-center justify-center">
@@ -65,24 +81,19 @@ export default function RegisterForm() {
             </div>
 
             {/* Orbiting Avatars */}
-            {/* Top Right */}
-            <div className="absolute -right-2 top-16 h-12 w-12 overflow-hidden rounded-full  border ">
+            <div className="absolute right-6 top-20 h-12 w-12 overflow-hidden rounded-full border">
               <img src="./images/Ellipse18.png" alt="Mentor 1" className="h-full w-full object-cover" />
             </div>
-            {/* Far Right */}
-            <div className="absolute -right-4 top-1/2 h-10 w-10 -translate-y-1/2 overflow-hidden rounded-full ">
+            <div className="absolute right-4 top-1/2 h-10 w-10 -translate-y-1/2 overflow-hidden rounded-full">
               <img src="./images/Ellipse19.png" alt="Mentor 2" className="h-full w-full object-cover" />
             </div>
-            {/* Bottom Right */}
-            <div className="absolute bottom-10 right-8 h-12 w-12 overflow-hidden rounded-full  ">
+            <div className="absolute bottom-12 right-8 h-12 w-12 overflow-hidden rounded-full">
               <img src="./images/Ellipse20.png" alt="Mentor 3" className="h-full w-full object-cover" />
             </div>
-            {/* Bottom Left */}
-            <div className="absolute bottom-12 left-2 h-12 w-12 overflow-hidden rounded-full  ">
+            <div className="absolute bottom-16 left-2 h-12 w-12 overflow-hidden rounded-full">
               <img src="./images/Ellipse21.png" alt="Mentor 4" className="h-full w-full object-cover" />
             </div>
-            {/* Top Left */}
-            <div className="absolute left-4 top-24 h-12 w-12 overflow-hidden rounded-full ">
+            <div className="absolute left-16 top-24 h-12 w-12 overflow-hidden rounded-full">
               <img src="./images/Ellipse22.png" alt="Mentor 5" className="h-full w-full object-cover" />
             </div>
           </div>
@@ -106,8 +117,7 @@ export default function RegisterForm() {
           {/* Logo Brand Header */}
           <div className="mb-6 flex justify-center">
             <div className="flex items-center px-3 py-1 text-xs font-bold tracking-wider text-[#1A1C23]">
-              {/* Fallback stylized logo mirroring EKEDC */}
-              <img src="./images/ekdc.png" alt="Logo" className="mr-2 h-5 w-12 " />
+              <img src="./images/ekdc.png" alt="Logo" className="mr-2 h-5 w-12 object-contain" />
             </div>
           </div>
 
@@ -256,7 +266,7 @@ export default function RegisterForm() {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full rounded-md bg-[#312F61] py-3.5 text-sm font-semibold text-white shadow-md hover:bg-[#232052] transition active:scale-[0.99]"
+                className="w-full rounded-md bg-[#312F61] py-3.5 text-sm font-semibold text-white shadow-md hover:bg-[#232052] transition active:scale-[0.99] cursor-pointer"
               >
                 Next
               </button>
@@ -267,9 +277,13 @@ export default function RegisterForm() {
         {/* Footer / Login Link */}
         <div className="text-center text-xs text-[#1A1C23]">
           Have an account already?{' '}
-          <a href="/login" className="font-semibold text-red-500 hover:underline">
+          <button 
+            type="button"
+            onClick={() => navigate('/login')} 
+            className="font-semibold text-red-500 hover:underline cursor-pointer bg-transparent border-none p-0"
+          >
             Login
-          </a>
+          </button>
         </div>
       </div>
     </div>

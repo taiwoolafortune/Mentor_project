@@ -12,7 +12,7 @@ export default function Login() {
       <div className="hidden w-1/3 flex-col justify-center bg-gradient-to-br from-rose-700 via-purple-900 to-indigo-950 p-12 text-white lg:flex relative overflow-hidden">
         <div className="absolute top-10 left-10 w-6 h-6 rounded-full bg-white/20" />
         <div className="absolute top-20 right-10 w-12 h-12 rounded-full bg-white/10" />
-        <p className="text-xl font-medium leading-relaxed max-w-sm z-10">
+        <p className="text-sm font-medium leading-relaxed max-w-sm z-10">
           Embrace the joy of shaping futures, the satisfaction of nurturing growth, and the privilege of leaving a lasting impact as a mentor.
         </p>
       </div>
