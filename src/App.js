@@ -18,7 +18,16 @@ import PasswordReset from "./components/authentication/login/PasswordReset";
 import Layout from "./components/Layout";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import MenteeRequest from "./components/pages/mentees-request/MenteeRequest";
+import MyMentee from "./components/pages/mentees-request/MyMentee";
+import Materials from "./components/pages/materials/Material";
 
+
+// 👑 FIXED: Temporary Lightweight Placeholders to prevent 'is not defined' compilation crashes
+// const Materials = () => <div className="p-4 font-semibold text-slate-700">Materials Content Coming Soon...</div>;
+const Chat = () => <div className="p-4 font-semibold text-slate-700">Chat Content Coming Soon...</div>;
+const Meetings = () => <div className="p-4 font-semibold text-slate-700">Meetings Content Coming Soon...</div>;
+const Profile = () => <div className="p-4 font-semibold text-slate-700">Profile & Settings Content Coming Soon...</div>;
+const Notifications = () => <div className="p-4 font-semibold text-slate-700">Notifications Content Coming Soon...</div>;
 // Temporary Lightweight Placeholders to prevent compilation crashes
 const MyMentees = () => <div className="p-4 font-semibold text-slate-700"></div>;
 const Materials = () => <div className="p-4 font-semibold text-slate-700"></div>;
@@ -61,7 +70,7 @@ function App() {
         >
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/mentees-request" element={<MenteeRequest />} />
-          <Route path="/my-mentee" element={<MyMentees />} />
+          <Route path="/my-mentee" element={<MyMentee />} />
           <Route path="/materials" element={<Materials />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/meetings" element={<Meetings />} />
