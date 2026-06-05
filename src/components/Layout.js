@@ -18,7 +18,7 @@ const navItems = [
   { name: "Dashboard", path: "/dashboard", icon: FiGrid },
   { name: "Mentee Request", path: "/mentees-request", icon: FiUsers },
   { name: "My Mentees", path: "/my-mentee", icon: FiUserCheck },
-  { name: "Materials", path: "/materials", icon: FiBookOpen },
+  { name: "Material", path: "/materials", icon: FiBookOpen },
   { name: "Chat", path: "/chat", icon: FiMessageSquare },
   { name: "Meetings", path: "/meetings", icon: FiVideo },
   { name: "Profile", path: "/settings", icon: FiUser },
