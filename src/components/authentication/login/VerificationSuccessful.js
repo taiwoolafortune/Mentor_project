@@ -8,9 +8,13 @@ export default function VerificationSuccessful() {
 
   return (
     <div className="flex min-h-screen bg-white">
-      <div className="hidden w-1/2 items-center justify-center bg-slate-50 lg:flex">
-        <div className="mx-auto flex h-48 w-48 items-center justify-center rounded-full bg-rose-50 text-rose-500 border-4 border-white shadow-xl">
-          <FiCheckCircle size={80} />
+     <div className="hidden w-1/2 items-center justify-center  lg:flex relative">
+        <div className="max-w-md text-center space-y-6 relative p-8">
+          {/* Custom floating abstract layout representing your image vectors */}
+          <div className="mx-auto flex h-48 w-48 items-center justify-center   shadow-xl">
+            <img src="./images/password.png" alt="Password Reset Illustration" className="h-[18rem] w-[20rem]  object-contain" />
+          </div>
+          
         </div>
       </div>
 

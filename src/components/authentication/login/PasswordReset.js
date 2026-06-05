@@ -8,12 +8,13 @@ export default function PasswordReset() {
   return (
     <div className="flex min-h-screen bg-white">
       {/* Big Green Success Check Illustration Layout */}
-      <div className="hidden w-1/2 items-center justify-center bg-slate-50 lg:flex relative">
-        <div className="text-center space-y-4 relative">
-          <div className="mx-auto flex h-52 w-52 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 shadow-xl border-4 border-white relative">
-            <FiCheckCircle size={100} />
-            <span className="absolute -top-2 -right-2 bg-rose-500 text-white font-bold px-3 py-1 text-xs rounded-full shadow">OK</span>
+     <div className="hidden w-1/2 items-center justify-center  lg:flex relative">
+        <div className="max-w-md text-center space-y-6 relative p-8">
+          {/* Custom floating abstract layout representing your image vectors */}
+          <div className="mx-auto flex h-48 w-48 items-center justify-center   shadow-xl">
+            <img src="./images/succes.png" alt="Password Reset Illustration" className="h-[18rem] w-[20rem]  object-contain" />
           </div>
+          
         </div>
       </div>
 

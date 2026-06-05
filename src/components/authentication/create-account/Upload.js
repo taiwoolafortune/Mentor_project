@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Upload = () => {
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     areaOfExpertise: '',
     mentoringApproach: '',
@@ -23,8 +26,16 @@ const Upload = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     console.log('Submitting Mentor Registration Data:', { formData, profilePhoto });
-    // Handle auth / API pipelines here
+    
+    // Smoothly route over to the email verification screen route 
+    navigate('/verify-email');
   };
 
   return (
@@ -34,7 +45,7 @@ const Upload = () => {
       <div className="w-full lg:w-[38%] bg-gradient-to-b from-[#1e265c] via-[#2d2150] to-[#b91c1c] min-h-[400px] lg:min-h-screen relative overflow-hidden flex flex-col justify-between p-8 sm:p-12 md:p-16 text-white order-2 lg:order-1">
         
         {/* Back Link Triggers */}
-        <button className="flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity w-fit z-10">
+        <button type="button" onClick={() => navigate(-1)} className="flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity w-fit z-10">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -49,7 +60,6 @@ const Upload = () => {
 
           {/* Abstract Radial Community Concentric Circles Visualizer */}
           <div className="relative w-64 h-64 mx-auto flex items-center justify-center">
-            {/* Outer Waves */}
             <div className="absolute inset-0 rounded-full border border-white/10 animate-pulse"></div>
             <div className="absolute p-8 inset-4 rounded-full border border-white/10"></div>
             <div className="absolute p-8 inset-10 rounded-full border border-white/20"></div>
@@ -77,8 +87,8 @@ const Upload = () => {
             <div className="absolute -bottom-4 left-24 w-10 h-10 rounded-full border border-white/30 overflow-hidden shadow-md">
               <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=80&auto=format&fit=crop&q=80" alt="User Node" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute bottom-20 -right-4 w-7 h-7 rounded-full border border-white/30 overflow-hidden bg-red-500 flex items-center justify-center shadow-md p-0.5">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80" alt="User Node" className="w-full h-full rounded-full object-cover" />
+            <div className="absolute bottom-20 -right-4 w-7 h-7 rounded-full border border-white/30 overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80" alt="User Node" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -97,7 +107,7 @@ const Upload = () => {
 
         {/* Brand System Logo */}
         <div className="mb-8 w-full max-w-xl flex justify-center lg:justify-end">
-          <img src="./images/logo.png" alt="EKEDC Logo" className="h-10 w-28 object-contain" />
+          <img src="./images/logo.png" alt="EXEDC Logo" className="h-10 w-28 object-contain" />
         </div>
 
         {/* Master Form Workspace Container */}
