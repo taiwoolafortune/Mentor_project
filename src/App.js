@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 // Auth Flows - Create Account
@@ -17,11 +18,12 @@ import Layout from "./components/Layout";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import MenteeRequest from "./components/pages/mentees-request/MenteeRequest";
 import Chat from "./components/pages/chat/Chat";
+import Meetings from "./components/pages/meetings/Meetings";
+import Settings from "./components/pages/settings/Settings";
 
 // 👑 FIXED: Temporary Lightweight Placeholders
 const MyMentees = () => <div className="p-4 font-semibold text-slate-700">My Mentees Content Coming Soon...</div>;
 const Materials = () => <div className="p-4 font-semibold text-slate-700">Materials Content Coming Soon...</div>;
-const Meetings = () => <div className="p-4 font-semibold text-slate-700">Meetings Content Coming Soon...</div>;
 const Profile = () => <div className="p-4 font-semibold text-slate-700">Profile & Settings Content Coming Soon...</div>;
 const Notifications = () => <div className="p-4 font-semibold text-slate-700">Notifications Content Coming Soon...</div>;
 
@@ -52,7 +54,7 @@ function App() {
           <Route path="/materials" element={<Materials />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/meetings" element={<Meetings />} />
-          <Route path="/settings" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/notifications" element={<Notifications />} />
         </Route>
