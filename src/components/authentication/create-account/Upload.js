@@ -115,7 +115,7 @@ const Upload = () => {
           
           {/* Upload Profile Photo Section */}
           <div className="space-y-2">
-            <label className="block text-sm font-semibold text-gray-700">Upload profile photo</label>
+            <label className="block text-sm font-semibold text-[#1A1C23]">Upload profile photo</label>
             <div className="flex items-center gap-4">
               <label className="relative group cursor-pointer flex items-center justify-center w-16 h-16 rounded-full bg-[#fce8ec] transition-all duration-200 hover:bg-[#fad1d9]">
                 <input 
@@ -143,14 +143,14 @@ const Upload = () => {
                   <input type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
                   Select a file
                 </label>
-                <span className="text-gray-400">Make sure the file is below 2mb</span>
+                <span className="text-[#1A1C23]">Make sure the file is below 2mb</span>
               </div>
             </div>
           </div>
 
           {/* Area of Expertise Input Field */}
           <div className="space-y-1.5">
-            <label className="block text-xs sm:text-sm font-semibold text-gray-800">
+            <label className="block text-xs sm:text-sm font-semibold text-[#1A1C23]">
               Area of Expertise <span className="text-[#b91c1c]">*</span>
             </label>
             <input
@@ -166,7 +166,7 @@ const Upload = () => {
 
           {/* Mentoring Approach Input Field */}
           <div className="space-y-1.5">
-            <label className="block text-xs sm:text-sm font-semibold text-gray-800">
+            <label className="block text-xs sm:text-sm font-semibold text-[#1A1C23]">
               Mentoring Approach <span className="text-[#b91c1c]">*</span>
             </label>
             <input
@@ -182,7 +182,7 @@ const Upload = () => {
 
           {/* Bio/Summary TextArea Input Field */}
           <div className="space-y-1.5">
-            <label className="block text-xs sm:text-sm font-semibold text-gray-800">
+            <label className="block text-xs sm:text-sm font-semibold text-[#1A1C23]">
               Bio/Summary <span className="text-[#b91c1c]">*</span>
             </label>
             <textarea
@@ -198,7 +198,7 @@ const Upload = () => {
 
           {/* Password Input Field */}
           <div className="space-y-1.5">
-            <label className="block text-xs sm:text-sm font-semibold text-gray-800">
+            <label className="block text-xs sm:text-sm font-semibold text-[#1A1C23]">
               Password <span className="text-[#b91c1c]">*</span>
             </label>
             <input
@@ -214,7 +214,7 @@ const Upload = () => {
 
           {/* Confirm Password Input Field */}
           <div className="space-y-1.5">
-            <label className="block text-xs sm:text-sm font-semibold text-gray-800">
+            <label className="block text-xs sm:text-sm font-semibold text-[#1A1C23]">
               Confirm Password <span className="text-[#b91c1c]">*</span>
             </label>
             <input

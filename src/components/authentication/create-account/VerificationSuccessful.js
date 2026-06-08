@@ -41,11 +41,11 @@ const VerificationSuccessful = () => {
             </div>
 
             {/* Typography */}
-            <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl w-full">
+            <h2 className="mb-3 text-2xl font-bold tracking-tight text-[#1A1C23] sm:text-3xl w-full">
               Verification Successful!
             </h2>
             
-            <p className="mb-8 text-sm leading-relaxed text-gray-500 sm:text-base">
+            <p className="mb-8 text-sm leading-relaxed text-[#1A1C23] sm:text-base">
               Thank you for registering with us. Our team is currently reviewing your account, and we will reach out to you via email once it is approved.
             </p>
 

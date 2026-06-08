@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   FiBell,
@@ -21,7 +21,7 @@ const navItems = [
   { name: "Material", path: "/materials", icon: FiBookOpen },
   { name: "Chat", path: "/chat", icon: FiMessageSquare },
   { name: "Meetings", path: "/meetings", icon: FiVideo },
-  { name: "Profile", path: "/settings", icon: FiUser },
+  { name: "Profile", path: "/profile", icon: FiUser },
 ];
 
 function getPageTitle(pathname) {
@@ -43,7 +43,7 @@ function SidebarLink({ item, onClick }) {
         `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${
           isActive
             ? "bg-[#312F61] text-white"
-            : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+            : "text-[#312F61] hover:bg-slate-100 hover:text-slate-900"
         }`
       }
     >
@@ -73,7 +73,7 @@ function Brand({ logoSrc, brandName }) {
       </div>
       <div>
         <p className="text-lg font-bold text-slate-900">{brandName}</p>
-        <p className="text-xs text-slate-500">Mentorship Platform</p>
+        <p className="text-xs text-[#312F61]">Mentorship Platform</p>
       </div>
     </div>
   );
@@ -85,11 +85,30 @@ export default function Layout({
   logoutTo = "/",
   onLogout,
 }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
+ const [mobileOpen, setMobileOpen] = useState(false);
+  // State hook to track unread notifications dynamically
+  const [hasUnread, setHasUnread] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const pageTitle = useMemo(() => getPageTitle(location.pathname), [location.pathname]);
+
+  // --- DYNAMIC UNREAD NOTIFICATION MONITOR ---
+  useEffect(() => {
+    const checkNotifications = () => {
+      const stored = JSON.parse(localStorage.getItem("ekedc_mentor_notifications")) || [];
+      // Evaluates true only if at least one entry has isUnread set to true
+      const unreadExists = stored.some(item => item.isUnread === true);
+      setHasUnread(unreadExists);
+    };
+
+    // Run verification immediately on view paint
+    checkNotifications();
+
+    // Updates state instantly when a user returns from reading a message
+    window.addEventListener("focus", checkNotifications);
+    return () => window.removeEventListener("focus", checkNotifications);
+  }, [location.pathname]); // Trigger recalculation on route navigation shifts
 
   const handleLogout = () => {
     if (typeof onLogout === "function") {
@@ -143,7 +162,7 @@ export default function Layout({
           <button
             type="button"
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-red-50 hover:text-red-600"
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[#312F61] transition hover:bg-red-50 hover:text-red-600"
           >
             <FiLogOut className="h-5 w-5 shrink-0" />
             <span>Logout</span>
@@ -169,10 +188,16 @@ export default function Layout({
               <button
                 type="button"
                 onClick={() => navigate("/notifications")}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-700 transition hover:bg-slate-50"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#312F61] transition hover:bg-slate-50 relative"
                 aria-label="Notifications"
               >
-                <FiBell className="h-5 w-5" />
+                {/* Kept your exact FiBell component with fill-current applied smoothly */}
+                <FiBell className="h-5 w-5 fill-current" />
+                
+                {/* Dynamic Red Dot Badge - conditional rendering based on storage query state */}
+                {hasUnread && (
+                  <span className="absolute top-2.5 right-2.5 w-2.5 h-2.5 bg-rose-500 rounded-full border-2 border-white animate-pulse" />
+                )}
               </button>
 
               <button

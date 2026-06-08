@@ -179,7 +179,7 @@ export default function Materials() {
   };
 
   return (
-    <div className="space-y-6 max-w-[1600px] mx-auto p-4 text-slate-700 min-h-screen relative">
+    <div className="space-y-6 max-w-[1600px] mx-auto p-4 text-[#1A1C23] min-h-screen relative">
       
       {/* SECTION HEADER BLOCK WITH SMART LINEAR RETREAT NAVIGATION */}
       <div className="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -194,10 +194,10 @@ export default function Materials() {
             </button>
           )}
           <div>
-            <h1 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-xl font-bold text-[#1A1C23] tracking-tight">
               {currentView === "CREATE_ASSESSMENT" || currentView === "VIEW_ASSESSMENT" ? "Assessment Space" : "Learning Management Materials"}
             </h1>
-            <p className="text-xs text-slate-400 font-medium">
+            <p className="text-xs text-[#1A1C23] font-medium">
               {currentView === "LIST" && "Manage courses, publish learning paths, and audit mentee progress metrics."}
               {currentView === "UPLOAD_FORM" && "Fill out metadata details to package course material assets."}
               {currentView === "CREATE_ASSESSMENT" && "Author evaluation metrics for matching modules safely."}
@@ -210,7 +210,7 @@ export default function Materials() {
         {currentView !== "LIST" && (
           <button 
             onClick={() => { setViewHistory([]); setCurrentView("LIST"); }}
-            className="text-xs font-bold text-slate-500 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-xl transition"
+            className="text-xs font-bold text-[#1A1C23] bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-xl transition"
           >
             Reset to Home View
           </button>
@@ -234,8 +234,8 @@ export default function Materials() {
               </div>
             </div>
             <div>
-              <p className="text-xs text-slate-400 font-semibold tracking-wide uppercase mb-1">Repository Empty</p>
-              <p className="text-xs text-slate-400 max-w-xs">You have no course materials uploaded. Get started by publishing your first course pack asset.</p>
+              <p className="text-xs text-[#1A1C23] font-semibold tracking-wide uppercase mb-1">Repository Empty</p>
+              <p className="text-xs text-[#1A1C23] max-w-xs">You have no course materials uploaded. Get started by publishing your first course pack asset.</p>
             </div>
             <button 
               onClick={() => navigateTo("UPLOAD_FORM")}
@@ -279,7 +279,7 @@ export default function Materials() {
           <div className="overflow-x-visible">
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
-                <tr className="border-b border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50/70">
+                <tr className="border-b border-slate-100 text-[11px] font-bold text-[#1A1C23] uppercase tracking-wider bg-slate-50/70">
                   <th className="py-3.5 px-4 w-12 text-center">S/N</th>
                   <th className="py-3.5 px-4">Course Title</th>
                   <th className="py-3.5 px-4 max-w-xs">Learning Objective</th>
@@ -289,15 +289,15 @@ export default function Materials() {
                   <th className="py-3.5 px-4 text-center w-32">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-50 text-xs font-medium text-slate-600">
+              <tbody className="divide-y divide-slate-50 text-xs font-medium text-[#1A1C23]">
                 {materials.map((item, idx) => (
                   <tr key={item.id} className="hover:bg-slate-50/40 transition">
-                    <td className="py-4 px-4 text-center text-slate-400 font-bold">{idx + 1}</td>
-                    <td className="py-4 px-4 font-bold text-slate-900">{item.title}</td>
-                    <td className="py-4 px-4 max-w-xs text-slate-400 truncate">
+                    <td className="py-4 px-4 text-center text-[#1A1C23] font-bold">{idx + 1}</td>
+                    <td className="py-4 px-4 font-bold text-[#1A1C23]">{item.title}</td>
+                    <td className="py-4 px-4 max-w-xs text-[#1A1C23] truncate">
                       {item.fileName ? `[File: ${item.fileName}] ` : ""}{item.objective}
                     </td>
-                    <td className="py-4 px-4 text-slate-500">{item.department}</td>
+                    <td className="py-4 px-4 text-[#1A1C23]">{item.department}</td>
                     <td className="py-4 px-4">
                       <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${
                         item.status === "Verified" ? "bg-emerald-50 text-emerald-600 border border-emerald-100" : "bg-rose-50 text-rose-600 border border-rose-100"
@@ -305,8 +305,8 @@ export default function Materials() {
                         {item.status}
                       </span>
                     </td>
-                    <td className="py-4 px-4 text-slate-400 font-mono">{item.date}</td>
-                    
+                    <td className="py-4 px-4 text-[#1A1C23] font-mono">{item.date}</td>
+
                     <td className="py-4 px-4 text-center relative">
                       <button 
                         onClick={(e) => {
@@ -359,31 +359,31 @@ export default function Materials() {
       {currentView === "UPLOAD_FORM" && (
         <div className="max-w-2xl bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden mx-auto animate-fadeIn">
           <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
-            <h2 className="text-sm font-bold text-slate-800">Upload Material Document</h2>
-            <button onClick={navigateBack} className="text-slate-400 hover:text-slate-600 transition">
+            <h2 className="text-sm font-bold text-[#1A1C23]">Upload Material Document</h2>
+            <button onClick={navigateBack} className="text-[#1A1C23]hover:text-slate-600 transition">
               <FiX size={18} />
             </button>
           </div>
           <form onSubmit={handleStartUpload} className="p-6 space-y-5 text-left">
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600">Course Title <span className="text-rose-500">*</span></label>
+              <label className="text-xs font-bold text-[#1A1C23]">Course Title <span className="text-rose-500">*</span></label>
               <input 
                 type="text" required placeholder="Enter your course title" value={courseTitle} onChange={(e) => setCourseTitle(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 placeholder-slate-400 outline-none focus:border-indigo-400 transition"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] placeholder-slate-400 outline-none focus:border-indigo-400 transition"
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600">Learning Objective</label>
+              <label className="text-xs font-bold text-[#1A1C23]">Learning Objective</label>
               <input 
                 type="text" placeholder="Enter your learning objective" value={learningObjective} onChange={(e) => setLearningObjective(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 placeholder-slate-400 outline-none focus:border-indigo-400 transition"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] placeholder-slate-400 outline-none focus:border-indigo-400 transition"
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600">Department <span className="text-rose-500">*</span></label>
+              <label className="text-xs font-bold text-[#1A1C23]">Department <span className="text-rose-500">*</span></label>
               <select 
                 required value={department} onChange={(e) => setDepartment(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-500 outline-none focus:border-indigo-400 transition appearance-none"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] outline-none focus:border-indigo-400 transition appearance-none"
               >
                 <option value="">Select department</option>
                 <option value="Finance">Finance</option>
@@ -392,16 +392,16 @@ export default function Materials() {
               </select>
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600">Estimated Course Duration <span className="text-rose-500">*</span></label>
+              <label className="text-xs font-bold text-[#1A1C23]">Estimated Course Duration <span className="text-rose-500">*</span></label>
               <input 
                 type="text" required placeholder="e.g 1 hour, 25 minutes" value={duration} onChange={(e) => setDuration(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 placeholder-slate-400 outline-none focus:border-indigo-400 transition"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] placeholder-slate-400 outline-none focus:border-indigo-400 transition"
               />
             </div>
 
             {/* --- ACTIVATED NATIVE FILE PICKER DRAG/CLICK COMPONENT --- */}
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600">Upload Course Pack File <span className="text-rose-500">*</span></label>
+              <label className="text-xs font-bold text-[#1A1C23]">Upload Course Pack File <span className="text-rose-500">*</span></label>
               
               {/* Hidden Native Input */}
               <input 
@@ -427,7 +427,7 @@ export default function Materials() {
                 {selectedFile ? (
                   <div>
                     <p className="text-xs font-bold text-emerald-600">Selected File:</p>
-                    <p className="text-xs text-slate-600 font-mono mt-1 break-all bg-white px-2 py-1 rounded border border-slate-100 inline-block">
+                    <p className="text-xs text-[#1A1C23] font-mono mt-1 break-all bg-white px-2 py-1 rounded border border-slate-100 inline-block">
                       {selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)
                     </p>
                     <p className="text-[11px] text-slate-400 mt-2">Click or drag a different file to replace</p>
@@ -520,7 +520,7 @@ export default function Materials() {
       {currentView === "CREATE_ASSESSMENT" && (
         <div className="max-w-5xl bg-white border border-slate-100 rounded-2xl shadow-3xs p-6 md:p-8 space-y-6 text-left mx-auto animate-fadeIn">
           <div className="bg-slate-50 border border-slate-100 rounded-xl p-4">
-            <p className="text-xs text-slate-400 leading-relaxed font-medium italic">
+            <p className="text-xs text-[#1A1C23] leading-relaxed font-medium italic">
               Kindly ensure each question is clear, concise, and free of ambiguity. Craft clear and concise answer choices, maintaining consistency in formatting. Note that the correct answer should be inputted in the field for Option A.
             </p>
           </div>
@@ -528,10 +528,10 @@ export default function Materials() {
           <div className="space-y-5 pt-2">
             <h3 className="text-xs font-bold text-rose-600 uppercase tracking-wider">Questions</h3>
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-600">Question {assessmentQuestions.length + 1} <span className="text-rose-500">*</span></label>
+              <label className="text-xs font-semibold text-[#1A1C23]">Question {assessmentQuestions.length + 1} <span className="text-rose-500">*</span></label>
               <textarea 
                 rows={3} placeholder="Type question string text here..." value={newQuestionText} onChange={(e) => setNewQuestionText(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 outline-none focus:border-indigo-400 transition placeholder-slate-300"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] outline-none focus:border-indigo-400 transition placeholder-slate-300"
               />
             </div>
           </div>
@@ -541,7 +541,7 @@ export default function Materials() {
             <div className="grid grid-cols-1 gap-4">
               {["A", "B", "C", "D"].map((opt) => (
                 <div key={opt} className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-600">Option {opt} {opt === "A" && "(System Marked Solution Answer Key)"} <span className="text-rose-500">*</span></label>
+                  <label className="text-xs font-semibold text-[#1A1C23]">Option {opt} {opt === "A" && "(System Marked Solution Answer Key)"} <span className="text-rose-500">*</span></label>
                   <input 
                     type="text" placeholder={`Enter Option ${opt} text matching requirements`}
                     value={opt === "A" ? optA : opt === "B" ? optB : opt === "C" ? optC : optD}
@@ -551,7 +551,7 @@ export default function Materials() {
                       if (opt === "C") setOptC(e.target.value);
                       if (opt === "D") setOptD(e.target.value);
                     }}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 outline-none focus:border-indigo-400 transition placeholder-slate-300"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-[#1A1C23] outline-none focus:border-indigo-400 transition placeholder-slate-300"
                   />
                 </div>
               ))}
@@ -561,7 +561,7 @@ export default function Materials() {
           <div className="flex justify-between items-center pt-4 border-t border-slate-50">
             <button 
               onClick={navigateBack}
-              className="text-xs font-bold text-slate-400 hover:text-slate-600 transition"
+              className="text-xs font-bold text-[#1A1C23] hover:text-slate-600 transition"
             >
               Back to List
             </button>
@@ -594,7 +594,7 @@ export default function Materials() {
             <div key={q.id} className="space-y-6 border-b border-slate-50 pb-6 last:border-0">
               <div className="space-y-2 relative">
                 <div className="flex items-start justify-between gap-4">
-                  <label className="text-xs font-bold text-slate-700">Question {q.id} <span className="text-rose-500">*</span></label>
+                  <label className="text-xs font-bold text-[#1A1C23]">Question {q.id} <span className="text-rose-500">*</span></label>
                   <button 
                     onClick={() => setActiveQuestionMenu(activeQuestionMenu === q.id ? null : q.id)}
                     className="p-1 text-slate-400 hover:text-slate-600 transition rounded"
@@ -609,17 +609,17 @@ export default function Materials() {
                     </div>
                   )}
                 </div>
-                <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 text-xs text-slate-500 leading-relaxed">
+                <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 text-xs text-[#1A1C23] leading-relaxed">
                   {q.text}
                 </div>
               </div>
 
               <div className="space-y-3 pl-2">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Target Answers</span>
+                <span className="text-xs font-bold text-[#1A1C23] uppercase tracking-wider block">Target Answers</span>
                 {q.options.map((opt) => (
                   <div key={opt.key} className="space-y-1.5 relative">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-600">Option {opt.key} {opt.key === q.correctKey && "(Marked Correct Solution)"}</span>
+                      <span className="text-xs font-bold text-[#1A1C23]">Option {opt.key} {opt.key === q.correctKey && "(Marked Correct Solution)"}</span>
                       <button 
                         onClick={() => setActiveOptionMenu(activeOptionMenu === opt.key ? null : opt.key)}
                         className="p-1 text-slate-400 hover:text-slate-600 transition"
@@ -646,7 +646,7 @@ export default function Materials() {
                       <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-indigo-100">
                         <input 
                           type="text" defaultValue={opt.text} id={`input-opt-${opt.key}`}
-                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2 text-xs text-slate-700 outline-none animate-fadeIn"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2 text-xs text-[#1A1C23] outline-none animate-fadeIn"
                         />
                         <div className="flex items-center gap-2">
                           <button 
@@ -671,7 +671,7 @@ export default function Materials() {
                         </div>
                       </div>
                     ) : (
-                      <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-xs text-slate-500">
+                      <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-xs text-[#1A1C23]">
                         {opt.text}
                       </div>
                     )}
@@ -720,17 +720,17 @@ export default function Materials() {
                   <th className="py-3 px-4">Assessment Date</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-50 text-xs font-medium text-slate-600">
+              <tbody className="divide-y divide-slate-50 text-xs font-medium text-[#1A1C23]">
                 {[
                   { name: "Daniel Solomon", email: "solomonbenji012@gmail.com", score: "100%", style: "text-emerald-600" },
                   { name: "Daniel Solomon", email: "solomonbenji012@gmail.com", score: "20%", style: "text-rose-500" }
                 ].map((row, index) => (
                   <tr key={index} className="hover:bg-slate-50/50 transition">
-                    <td className="py-4 px-4 text-center text-slate-400 font-mono">{index + 1}</td>
-                    <td className="py-4 px-4 font-bold text-slate-900">{row.name}</td>
-                    <td className="py-4 px-4 font-mono text-slate-400">{row.email}</td>
+                    <td className="py-4 px-4 text-center text-[#1A1C23] font-mono">{index + 1}</td>
+                    <td className="py-4 px-4 font-bold text-[#1A1C23]">{row.name}</td>
+                    <td className="py-4 px-4 font-mono text-[#1A1C23]">{row.email}</td>
                     <td className={`py-4 px-4 font-bold ${row.style}`}>{row.score}</td>
-                    <td className="py-4 px-4 text-slate-400 font-mono">13-08-2023</td>
+                    <td className="py-4 px-4 text-[#1A1C23] font-mono">13-08-2023</td>
                   </tr>
                 ))}
               </tbody>
@@ -753,9 +753,9 @@ export default function Materials() {
               <FiAlertCircle size={24} />
             </div>
             <div className="space-y-1.5">
-              <h3 className="text-sm font-bold text-slate-800">Delete Material</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Are you sure you want to delete <span className="font-semibold text-slate-700">"{selectedMaterial?.title}"</span>? This action cannot be undone.
+              <h3 className="text-sm font-bold text-[#1A1C23]">Delete Material</h3>
+              <p className="text-xs text-[#1A1C23] leading-relaxed">
+                Are you sure you want to delete <span className="font-semibold text-[#1A1C23]">"{selectedMaterial?.title}"</span>? This action cannot be undone.
               </p>
             </div>
             <div className="flex items-center gap-3 pt-2">
@@ -784,15 +784,15 @@ export default function Materials() {
               <FiAlertCircle size={24} />
             </div>
             <div className="space-y-1.5">
-              <h3 className="text-sm font-bold text-slate-800">Delete Question</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="text-sm font-bold text-[#1A1C23]">Delete Question</h3>
+              <p className="text-xs text-[#1A1C23] leading-relaxed">
                 Are you sure you want to delete this question? This action cannot be undone.
               </p>
             </div>
             <div className="flex items-center gap-3 pt-2">
               <button 
                 onClick={() => setShowQuestionDeleteModal(false)}
-                className="flex-1 border border-slate-200 hover:bg-slate-50 text-slate-600 py-2 rounded-xl text-xs font-semibold transition"
+                className="flex-1 border border-slate-200 hover:bg-slate-50 text-[#1A1C23] py-2 rounded-xl text-xs font-semibold transition"
               >
                 Cancel
               </button>

@@ -25,10 +25,10 @@ const LandingPage = ({ onProceed }) => {
         </div>
 
         <div className="max-w-2xl w-full mx-auto my-auto py-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#1A1C23] mb-2">
             Hello! What brings you to Virtual Mentoring Portal
           </h1>
-          <p className="text-sm text-gray-500 mb-10">
+          <p className="text-sm text-[#1A1C23] mb-10">
             Join our vibrant community of mentors and mentees. Your journey begins here!
           </p>
 
@@ -42,14 +42,14 @@ const LandingPage = ({ onProceed }) => {
                   : 'border-gray-100 hover:border-gray-200 shadow-sm'
               }`}
             >
-              <div className="h-28 w-28 mb-4 flex items-center justify-center bg-gray-50 rounded-lg">
+              <div className="h-28 w-28 mb-4 flex items-center justify-center ">
                 <div className="relative w-full h-full p-4 flex items-end justify-center">
-                  <div className="w-12 h-16 bg-[#b91c1c] opacity-20 rounded-t-full absolute bottom-4"></div>
-                  <div className="w-8 h-8 bg-gray-400 rounded-full z-10 mb-2"></div>
+                 <img src="./images/mentorlanding.png" alt="Mentor Icon" className="h-24 w-20 object-cover" />
                 </div>
+
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">I want to be a mentor</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <h3 className="font-semibold text-[#1A1C23] mb-2 text-sm sm:text-base">I want to be a mentor</h3>
+              <p className="text-xs text-[#616E7C] leading-relaxed">
                 If you're an experienced professional eager to guide and inspire others, select this option.
               </p>
             </div>
@@ -65,20 +65,19 @@ const LandingPage = ({ onProceed }) => {
             >
               <div className="h-28 w-28 mb-4 flex items-center justify-center bg-gray-50 rounded-lg">
                 <div className="relative w-full h-full p-4 flex items-end justify-center">
-                  <div className="w-12 h-12 bg-slate-700 opacity-20 rounded-md absolute bottom-4"></div>
-                  <div className="w-6 h-6 bg-gray-400 rounded-full z-10 mb-4"></div>
+                  <img src="./images/menteelanding.png" alt="Mentee Icon" className="h-24 w-20 object-cover" />
                 </div>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">I want to be a mentee</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <h3 className="font-semibold text-[#1A1C23] mb-2 text-sm sm:text-base">I want to be a mentee</h3>
+              <p className="text-xs text-[#616E7C] leading-relaxed">
                 If you're seeking guidance, knowledge, and personal growth, choose this option.
               </p>
             </div>
           </div>
 
           <div className="mb-8">
-            <h4 className="font-bold text-gray-900 text-sm sm:text-base mb-1">Mentoring Guide Agreement</h4>
-            <p className="text-xs text-gray-500 mb-4">Please accept the guidelines to continue.</p>
+            <h4 className="font-bold text-[#1A1C23] text-sm sm:text-base mb-1">Mentoring Guide Agreement</h4>
+            <p className="text-xs text-[#1A1C23] mb-4">Please accept the guidelines to continue.</p>
             <label className="flex items-start gap-3 cursor-pointer select-none group">
               <input
                 type="checkbox"
@@ -86,7 +85,7 @@ const LandingPage = ({ onProceed }) => {
                 onChange={(e) => setAgreed(e.target.checked)}
                 className="accent-[#b91c1c] h-4 w-4 mt-0.5 rounded cursor-pointer"
               />
-              <span className="text-xs font-medium text-gray-700">
+              <span className="text-xs font-medium text-[#1A1C23]">
                 I agree to follow the Virtual Mentoring Portal's <span className="text-[#b91c1c] underline font-semibold">Mentoring Guide Agreement</span>
               </span>
             </label>

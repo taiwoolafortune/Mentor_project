@@ -37,7 +37,7 @@ export default function MyMentee() {
   // --- VIEW 3: DETAILED MENTEE PROFILE WORKSPACE (Screenshot 3) ---
   if (selectedMentee) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 md:p-8 max-w-5xl mx-auto text-slate-700 animate-fadeIn relative">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 md:p-8 max-w-5xl mx-auto text-[#1A1C23] animate-fadeIn relative">
         
         {/* Back navigation control */}
         <button 
@@ -61,7 +61,7 @@ export default function MyMentee() {
             <p className="text-xs text-indigo-600 flex items-center justify-center sm:justify-start gap-1.5 font-medium pt-0.5">
               <FiMail size={13} /> {selectedMentee.email || "gideontayo124@gmail.com"}
             </p>
-            <p className="text-[11px] text-slate-400 font-mono bg-slate-50 px-2 py-0.5 rounded inline-block">
+            <p className="text-[11px] text-[#1A1C23] font-mono bg-slate-50 px-2 py-0.5 rounded inline-block">
               Gideon12D890
             </p>
           </div>
@@ -70,16 +70,16 @@ export default function MyMentee() {
         {/* Structured Copy Area */}
         <div className="py-6 space-y-6">
           <div className="space-y-2">
-            <h3 className="text-sm font-bold text-slate-800">Bio/Summary</h3>
-            <p className="text-xs text-slate-500 leading-relaxed max-w-4xl">
+            <h3 className="text-sm font-bold text-[#1A1C23]">Bio/Summary</h3>
+            <p className="text-xs text-[#1A1C23] leading-relaxed max-w-4xl">
               A driven and resourceful personal assistant with a passion for organization and efficiency. With an extensive background in managing schedules, travel itineraries, and administrative tasks, I am on a mission to excel in my role and contribute to my employer's success. my proactive approach, coupled with exceptional problem-solving skills, makes me an invaluable asset in any professional setting. I am on a journey of self-improvement and aspires to take my career to new heights. I seek mentorship to refine my time management, communication, and leadership abilities, and to gain insights from an experienced mentor who has thrived in a similar role. With a commitment to personal growth and a thirst for knowledge, i am ready to learn, adapt, and embrace new challenges in my quest for excellence.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-slate-800">Area of Improvement</h3>
+            <h3 className="text-sm font-bold text-[#1A1C23]">Area of Improvement</h3>
             <div className="flex flex-wrap gap-2">
-              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-full px-4 py-1.5 text-xs text-slate-600 font-medium">
+              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-full px-4 py-1.5 text-xs text-[#1A1C23] font-medium">
                 <FiTarget className="text-amber-500" size={14} /> Skill Development
               </span>
               <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 rounded-full px-4 py-1.5 text-xs text-slate-600 font-medium">
@@ -98,7 +98,7 @@ export default function MyMentee() {
             </button>
             <button 
               onClick={() => setShowFeedbackModal(true)}
-              className="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl px-4 py-2 text-xs text-slate-600 font-semibold transition"
+              className="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl px-4 py-2 text-xs text-[#1A1C23] font-semibold transition"
             >
               <FiAward size={13} /> Give Feedbacks
             </button>
@@ -126,7 +126,7 @@ export default function MyMentee() {
               </div>
               <div className="space-y-1.5">
                 <h3 className="text-sm font-bold text-[#2D2B5A]">Dear Grace!</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-[#1A1C23] leading-relaxed">
                   Feedback is collected quarterly. We'll notify you when it's time to provide your valuable input. Thank you for your patience!
                 </p>
               </div>
@@ -202,10 +202,10 @@ export default function MyMentee() {
 
   // --- MAIN LAYOUT RENDER ---
   return (
-    <div className="space-y-6 max-w-[1600px] mx-auto p-1 text-slate-800">
+    <div className="space-y-6 max-w-[1600px] mx-auto p-1 text-[#1A1C23]">
       
       <div>
-        <h1 className="text-xl font-bold text-slate-900">My Mentee</h1>
+        <h1 className="text-xl font-bold text-[#1A1C23]">My Mentee</h1>
       </div>
 
       {/* VIEW 1: EMPTY LIST DATA PLACEHOLDER (Screenshot 1) */}
@@ -215,7 +215,7 @@ export default function MyMentee() {
             <div className="relative w-32 h-32 mx-auto flex items-center justify-center text-indigo-100 bg-slate-50 rounded-full border border-slate-100/60">
               <FiFolder size={56} className="text-indigo-200" />
             </div>
-            <p className="text-xs text-slate-400 font-medium tracking-wide">
+            <p className="text-xs text-[#1A1C23] font-medium tracking-wide">
               You have no mentee yet
             </p>
           </div>
@@ -237,10 +237,10 @@ export default function MyMentee() {
                   className="w-16 h-16 rounded-full object-cover border-2 border-slate-50 shadow-xs"
                 />
                 <div className="space-y-0.5">
-                  <h3 className="text-sm font-bold text-slate-900">{item.name}</h3>
-                  <p className="text-xs text-slate-400 font-medium">{item.role}</p>
-                  <p className="text-[11px] text-slate-500 font-medium underline flex items-center gap-1">
-                    Email: <span className="font-mono text-slate-400 select-all">{item.email || "gideontayo124@gmail.com"}</span>
+                  <h3 className="text-sm font-bold text-[#1A1C23]">{item.name}</h3>
+                  <p className="text-xs text-[#1A1C23] font-medium">{item.role}</p>
+                  <p className="text-[11px] text-[#1A1C23] font-medium underline flex items-center gap-1">
+                    Email: <span className="font-mono text-[#1A1C23] select-all">{item.email || "gideontayo124@gmail.com"}</span>
                   </p>
                 </div>
               </div>
@@ -252,23 +252,23 @@ export default function MyMentee() {
                 </div>
                 {index === 0 ? (
                   <>
-                    <span className="text-[11px] font-bold text-slate-700">No Meeting Scheduled</span>
+                    <span className="text-[11px] font-bold text-[#1A1C23]">No Meeting Scheduled</span>
                     <button className="text-[10px] text-rose-600 font-semibold underline hover:text-rose-700">View all</button>
                   </>
                 ) : (
                   <>
-                    <span className="text-[11px] font-bold text-slate-700">Next Meeting</span>
-                    <p className="text-[10px] text-slate-400 font-medium">Date: October 11, 2023</p>
-                    <p className="text-[10px] text-slate-400 font-medium">Time: 3:30PM</p>
-                    <button className="text-[10px] text-rose-600 font-semibold underline hover:text-rose-700 pt-0.5">View all</button>
+                    <span className="text-[11px] font-bold text-[#1A1C23]">Next Meeting</span>
+                    <p className="text-[10px] text-[#1A1C23] font-medium">Date: October 11, 2023</p>
+                    <p className="text-[10px] text-[#1A1C23] font-medium">Time: 3:30PM</p>
+                    <button  className="text-[10px] text-rose-600 font-semibold underline hover:text-rose-700 pt-0.5">View all</button>
                   </>
                 )}
               </div>
 
               {/* Direct Communication Strip */}
               <div className="flex items-center justify-between md:justify-end gap-6 flex-1">
-                <button className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition">
-                  <FiMessageSquare size={14} className="text-slate-400" /> Send a message
+                <button className="flex items-center gap-1.5 text-xs font-semibold text-[#1A1C23] hover:text-[#1A1C23] transition">
+                  <FiMessageSquare size={14} className="text-[#1A1C23]" /> Send a message
                 </button>
                 <button 
                   onClick={() => setSelectedMentee(item)}

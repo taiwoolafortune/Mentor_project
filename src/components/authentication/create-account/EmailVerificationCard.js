@@ -48,17 +48,17 @@ const EmailVerificationCard = () => {
             </div>
 
             {/* Typography */}
-            <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="mb-3 text-2xl font-bold tracking-tight text-[#1A1C23] sm:text-3xl">
               Check Your Inbox
             </h2>
             
-            <p className="mb-8 text-sm leading-relaxed text-gray-500 sm:text-base">
+            <p className="mb-8 text-sm leading-relaxed text-[#1A1C23] sm:text-base">
               We've sent a verification link to your email. Please check your inbox or spam folder and click the link to complete the verification process. Thank you!
             </p>
 
             {/* Action Section */}
             <div className="space-y-4">
-              <p className="text-xs font-medium text-gray-400 sm:text-sm">
+              <p className="text-xs font-medium text-[#1A1C23] sm:text-sm">
                 Can't find the link?{' '}
                 <button 
                   type="button"

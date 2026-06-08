@@ -50,7 +50,7 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="space-y-6 max-w-[1600px] mx-auto p-1 text-slate-800">
+    <div className="space-y-6 max-w-[1600px] mx-auto p-1 text-[#1A1C23]">
       
       {/* Top Warning Banner Notice */}
       <div className="flex items-center justify-between bg-[#FDF8E7] border border-[#F5E6C4] rounded-xl px-5 py-3 text-sm text-[#8A6D3B]">
@@ -65,10 +65,10 @@ export default function Dashboard() {
 
       {/* Dynamic Main Headline Typography */}
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">
+        <h1 className="text-2xl font-bold text-[#1A1C23]">
           {dashboardView === "existing" ? "Welcome Back!" : "Welcome!"} Mercy Adams 😇
         </h1>
-        <p className="text-sm text-slate-500 mt-1">
+        <p className="text-sm text-[#1A1C23] mt-1">
           Your wisdom and support make dreams a reality. Let's empower lives together.
         </p>
       </div>
@@ -100,13 +100,13 @@ export default function Dashboard() {
           {/* 1. EMPTY STATE CONTAINER LOOKUP */}
           {dashboardView === "empty" && (
             <div className="bg-slate-50/50 border border-slate-100 rounded-2xl p-8 min-h-[480px] flex flex-col justify-between">
-              <h3 className="text-sm font-bold text-slate-800">Recent Mentee Request</h3>
+              <h3 className="text-sm font-bold text-[#1A1C23]">Recent Mentee Request</h3>
               <div className="flex flex-col items-center justify-center text-center max-w-sm mx-auto my-auto space-y-4">
                 <div className="p-4 bg-indigo-50 text-indigo-600 rounded-full">
                   <FiInbox size={36} />
                 </div>
-                <h4 className="font-bold text-slate-800 text-sm">No Mentee Request</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <h4 className="font-bold text-[#1A1C23] text-sm">No Mentee Request</h4>
+                <p className="text-xs text-[#1A1C23] leading-relaxed">
                   It appears there are no mentee requests awaiting your attention right now. Stay ready for upcoming requests, as your guidance and mentorship are in high demand.
                 </p>
               </div>
@@ -117,13 +117,13 @@ export default function Dashboard() {
           {dashboardView === "requests" && (
             <div className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold text-slate-800">Recent Mentee Request</h3>
+                <h3 className="text-sm font-bold text-[#1A1C23]">Recent Mentee Request</h3>
                 <button onClick={() => navigate("/mentee-request")} className="text-xs font-semibold text-rose-500 hover:underline">
                   View all
                 </button>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs text-slate-600 border-collapse">
+                <table className="w-full text-left text-xs text-[#1A1C23] border-collapse">
                   <thead>
                     <tr className="border-b border-slate-100 text-slate-400 font-medium">
                       <th className="py-3 px-2">First Name</th>
@@ -137,7 +137,7 @@ export default function Dashboard() {
                     {requests.map((req, i) => (
                       <tr key={i} className="hover:bg-slate-50/60 transition-colors">
                         <td className="py-2.5 px-2 font-medium text-slate-800 flex items-center gap-2">
-                          <img src={req.img || "https://via.placeholder.com/150"} alt="" className="w-6 h-6 rounded-full object-cover border border-slate-200" />
+                          <img src={req.img || "./images/Ellipse22.png"} alt="" className="w-12 h-12 rounded-full object-cover " />
                           {req.firstName}
                         </td>
                         <td className="py-2.5 px-2">{req.lastName}</td>
@@ -171,10 +171,10 @@ export default function Dashboard() {
                   {mentees.map((mentee, i) => (
                     <div key={i} className="border border-slate-100 rounded-xl p-3 flex items-center justify-between bg-slate-50/30">
                       <div className="flex items-center gap-3">
-                        <img src={mentee.img || "https://via.placeholder.com/150"} alt="" className="w-10 h-10 rounded-full object-cover border border-slate-100" />
+                        <img src={mentee.img || "./images/Ellipse22.png"} alt="" className="w-10 h-10 rounded-full object-cover border border-slate-100" />
                         <div>
-                          <h4 className="text-xs font-bold text-slate-800">{mentee.name}</h4>
-                          <p className="text-[10px] text-slate-400 mt-0.5">Role: {mentee.role}</p>
+                          <h4 className="text-xs font-bold text-[#1A1C23]">{mentee.name}</h4>
+                          <p className="text-[10px] text-[#1A1C23] mt-0.5">Role: {mentee.role}</p>
                         </div>
                       </div>
                       <button className="text-[10px] font-semibold text-slate-600 border border-slate-200 rounded-lg px-2.5 py-1.5 bg-white hover:bg-slate-50 transition">
@@ -197,14 +197,14 @@ export default function Dashboard() {
                   {chats.map((chat, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-slate-50 pb-2.5 last:border-none last:pb-0">
                       <div className="flex items-center gap-3">
-                        <img src={chat.img || "https://via.placeholder.com/150"} alt="" className="w-9 h-9 rounded-full object-cover" />
+                        <img src={chat.img || "./images/Ellipse22.png"} alt="" className="w-9 h-9 rounded-full object-cover" />
                         <div>
-                          <h4 className="text-xs font-bold text-slate-800">{chat.name}</h4>
-                          <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">{chat.msg}</p>
+                          <h4 className="text-xs font-boldtext-[#1A1C23]">{chat.name}</h4>
+                          <p className="text-xs text-[#1A1C23] line-clamp-1 mt-0.5">{chat.msg}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-4">
-                        <span className="text-[10px] text-slate-400">{chat.time || "10:05 am"}</span>
+                        <span className="text-[10px] text-[#1A1C23]">{chat.time || "10:05 am"}</span>
                         {chat.unread > 0 && (
                           <span className="bg-rose-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                             {chat.unread}
@@ -229,7 +229,7 @@ export default function Dashboard() {
           {/* UPCOMING EVENTS SCHEDULER VIEW CONTAINER */}
           <div className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 flex flex-col justify-between min-h-[250px]">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold text-slate-800">Upcoming Meetings</h3>
+              <h3 className="text-sm font-bold text-[#1A1C23]">Upcoming Meetings</h3>
               {dashboardView === "existing" && (
                 <button onClick={() => navigate("/meetings")} className="text-xs font-semibold text-rose-500 hover:underline">
                   View all
@@ -242,16 +242,16 @@ export default function Dashboard() {
                 <div className="w-24 h-16 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 border border-slate-100">
                   <FiCalendar size={24} />
                 </div>
-                <p className="text-xs text-slate-400">No scheduled meeting yet</p>
+                <p className="text-xs text-[#1A1C23]">No scheduled meeting yet</p>
               </div>
             ) : (
               <div className="space-y-2.5 mt-4 my-auto">
                 {meetings.map((meet, i) => (
                   <div key={i} className="border border-slate-100 rounded-xl p-3 bg-slate-50/20 relative pl-6">
                     <span className="absolute left-2.5 top-4 w-1.5 h-1.5 bg-rose-500 rounded-full" />
-                    <h4 className="text-xs font-bold text-slate-800">{meet.title}</h4>
-                    <p className="text-[10px] text-slate-400 mt-0.5">Mentee: {meet.mentee}</p>
-                    <div className="flex items-center gap-3 text-[10px] text-slate-400 mt-2 pt-2 border-t border-slate-50">
+                    <h4 className="text-xs font-bold text-[#1A1C23]">{meet.title}</h4>
+                    <p className="text-[10px] text-[#1A1C23] mt-0.5">Mentee: {meet.mentee}</p>
+                    <div className="flex items-center gap-3 text-[10px] text-[#1A1C23] mt-2 pt-2 border-t border-slate-50">
                       <span className="flex items-center gap-1"><FiCalendar size={12}/>{meet.date}</span>
                       <span className="flex items-center gap-1"><FiClock size={12}/>{meet.time}</span>
                     </div>
@@ -264,7 +264,7 @@ export default function Dashboard() {
           {/* GROUPS NETWORKING COMMUNICATIONS PANEL CONTAINER */}
           <div className="bg-white border border-slate-100 shadow-sm rounded-2xl p-5 flex flex-col justify-between min-h-[350px]">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold text-slate-800">Discussion Groups</h3>
+              <h3 className="text-sm font-bold text-[#1A1C23]">Discussion Groups</h3>
               {dashboardView !== "empty" && (
                 <button onClick={() => navigate("/materials")} className="text-xs font-semibold text-rose-500 hover:underline">
                   View all
@@ -277,8 +277,8 @@ export default function Dashboard() {
                 <div className="p-3 bg-slate-50 text-slate-300 rounded-full border border-slate-100">
                   <FiMessageSquare size={28} />
                 </div>
-                <h4 className="font-bold text-slate-800 text-xs">No Discussion Groups Found</h4>
-                <p className="text-[10px] text-slate-400 leading-relaxed px-2">
+                <h4 className="font-bold text-[#1A1C23] text-xs">No Discussion Groups Found</h4>
+                <p className="text-[10px] text-[#1A1C23] leading-relaxed px-2">
                   It appears there are no discussion groups available right now. Stay tuned for upcoming group discussions, where you can connect with like-minded individuals and engage in meaningful conversations
                 </p>
               </div>
@@ -291,9 +291,9 @@ export default function Dashboard() {
                         WE
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-800">{group.title}</h4>
-                        <p className="text-[9px] text-slate-400 line-clamp-1">{group.subtitle}</p>
-                        <div className="flex items-center gap-2 text-[9px] text-slate-400 mt-1">
+                        <h4 className="text-xs font-bold text-[#1A1C23]">{group.title}</h4>
+                        <p className="text-[9px] text-[#1A1C23] line-clamp-1">{group.subtitle}</p>
+                        <div className="flex items-center gap-2 text-[9px] text-[#1A1C23] mt-1">
                           <span className="flex items-center gap-0.5"><FiUsers size={10}/> {group.mentees} mentees</span>
                           <span className="flex items-center gap-0.5"><FiUserCheck size={10}/> {group.mentors} mentors</span>
                         </div>

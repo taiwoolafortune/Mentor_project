@@ -20,20 +20,22 @@ import Dashboard from "./components/pages/dashboard/Dashboard";
 import MenteeRequest from "./components/pages/mentees-request/MenteeRequest";
 import MyMentee from "./components/pages/mentees-request/MyMentee";
 import Materials from "./components/pages/materials/Material";
-
-
+import Chat from "./components/pages/chat/Chat";
+import Meetings from "./components/pages/meetings/Meetings";
+import Profile from "./components/pages/profile/Profile";
+import Notification from "./components/pages/dashboard/Notification";
 // 👑 FIXED: Temporary Lightweight Placeholders to prevent 'is not defined' compilation crashes
 // const Materials = () => <div className="p-4 font-semibold text-slate-700">Materials Content Coming Soon...</div>;
-const Chat = () => <div className="p-4 font-semibold text-slate-700">Chat Content Coming Soon...</div>;
-const Meetings = () => <div className="p-4 font-semibold text-slate-700">Meetings Content Coming Soon...</div>;
-const Profile = () => <div className="p-4 font-semibold text-slate-700">Profile & Settings Content Coming Soon...</div>;
-const Notifications = () => <div className="p-4 font-semibold text-slate-700">Notifications Content Coming Soon...</div>;
+// const Chat = () => <div className="p-4 font-semibold text-slate-700">Chat Content Coming Soon...</div>;
+// const Meetings = () => <div className="p-4 font-semibold text-slate-700">Meetings Content Coming Soon...</div>;
+// const Profile = () => <div className="p-4 font-semibold text-slate-700">Profile & Settings Content Coming Soon...</div>;
+// const Notifications = () => <div className="p-4 font-semibold text-slate-700">Notifications Content Coming Soon...</div>;
 // Temporary Lightweight Placeholders to prevent compilation crashes
 const MyMentees = () => <div className="p-4 font-semibold text-slate-700"></div>;
-const Materials = () => <div className="p-4 font-semibold text-slate-700"></div>;
-const Chat = () => <div className="p-4 font-semibold text-slate-700"></div>;
-const Meetings = () => <div className="p-4 font-semibold text-slate-700"></div>;
-const Profile = () => <div className="p-4 font-semibold text-slate-700"></div>;
+const Material = () => <div className="p-4 font-semibold text-slate-700"></div>;
+const Chats = () => <div className="p-4 font-semibold text-slate-700"></div>;
+const Meeting = () => <div className="p-4 font-semibold text-slate-700"></div>;
+const Profiles = () => <div className="p-4 font-semibold text-slate-700"></div>;
 const Notifications = () => <div className="p-4 font-semibold text-slate-700"></div>;
 
 const LandingPageRouteWrapper = () => {
@@ -75,9 +77,9 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/meetings" element={<Meetings />} />
           
-          <Route path="/settings" element={<Profile />} />
+          
           <Route path="/profile" element={<Profile />} />
-          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/notifications" element={<Notification />} />
         </Route>
       </Routes>
     </BrowserRouter>
